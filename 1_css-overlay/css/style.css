@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 200vh;
+}
+
+.hero {
+  background:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),  url('../img/hero.jpg');
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero h1 {
+  color: #fff;
+}
