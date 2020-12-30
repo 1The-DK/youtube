@@ -1,0 +1,40 @@
+html {
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: $font-family;
+  overflow-x: hidden;
+  line-height: 1.4;
+  background-color: $color-bg;
+  color: #fff;
+  height: 100vh;
+  position: relative;
+  overflow-y: hidden;
+
+  @media (min-width: 1024px) {
+    font-size: 1.7rem;
+    line-height: 1.8;
+  }
+}
+
+h1 {
+  font-size: 5rem;
+  line-height: 0.93;
+  font-family: $font-family-alt;
+  @media (min-width: 1024px) {
+    font-size: 11.8rem;
+  }
+}

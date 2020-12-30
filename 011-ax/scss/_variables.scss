@@ -1,0 +1,29 @@
+// colors
+$color-primary: #00b1ff;
+$color-primary-dark: darken(#00b1ff, 30%);
+$color-bg: #030c1c;
+
+$color-blue: #d9f0ff;
+$color-grey: #fafafa;
+$color-black: #222;
+
+// fonts
+$font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+$font-family-alt: "Jaapokki enchance", Arial, Helvetica, sans-serif;
+$font-family-subtract: "Jaapokki subtract", Arial, Helvetica, sans-serif;
+
+$font-size: 1.6rem;
+
+// -- burger
+$color-burger: #fff;
+$width-burger-line: 20px;
+$height-burger-line: 3px;
+$margin-burger-line: 4px;
+$radius-burger-line: 0px;
+$transform-y-burger-line: $margin-burger-line + $height-burger-line;
+
+// -- overlay
+$background-color-overlay: #fff;
+
+// -- layout
+$width-container: 1200px;
