@@ -1,0 +1,147 @@
+/* resets */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+/* gallery */
+
+.gallery {
+  overflow: hidden;
+}
+
+.gallery__item {
+  position: relative;
+  height: 50vh;
+  min-height: 50vh;
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+.gallery__item--first {
+  background-image: url("./img/september.jpg");
+}
+
+.gallery__item--2 {
+  background-image: url("./img/september_2.jpg");
+}
+
+.gallery__item--3 {
+  background-image: url("./img/september_3.jpg");
+}
+
+.gallery__item--4 {
+  background-image: url("./img/september_4.jpg");
+}
+
+.gallery__item--5 {
+  background-image: url("./img/september_5.jpg");
+}
+
+.gallery__item--6 {
+  background-image: url("./img/september_6.jpg");
+}
+
+.gallery__item--7 {
+  background-image: url("./img/september_7.jpg");
+}
+
+.gallery__item--8 {
+  background-image: url("./img/september_8.jpg");
+}
+
+.gallery__item--9 {
+  background-image: url("./img/september_9.jpg");
+}
+
+.gallery__item:hover .gallery__info {
+  opacity: 1;
+}
+
+.gallery__item:hover .gallery__info > div {
+  top: 0;
+}
+
+.gallery__info {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  opacity: 0; /* add last */
+  transition: opacity 0.2s ease; /* add last */
+  background-color: #111;
+  color: #fff;
+}
+
+.gallery__info p {
+  color: silver;
+}
+
+.gallery__info h2 {
+  letter-spacing: 0.1em;
+  margin-bottom: 0;
+}
+
+.gallery__info > div {
+  position: relative;
+  top: 10px;
+  transition: top 0.2s ease;
+  padding: 2rem;
+  width: 100%;
+}
+
+.gallery__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+/* media queries */
+
+@media (min-width: 60em) {
+  .gallery__item {
+    height: 50vh;
+    min-height: 50vh;
+  }
+  .gallery__item--2x {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}
+
+@media (min-width: 30em) {
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 60em) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

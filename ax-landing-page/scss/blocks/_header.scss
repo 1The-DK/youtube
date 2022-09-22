@@ -1,0 +1,272 @@
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  padding-top: 2rem;
+  // transition: all 0.5s ease;
+  z-index: 20;
+  transform: translateY(-50%);
+  animation: fadeDown 0.5s ease forwards;
+  opacity: 0;
+
+  @media (min-width: 1024px) {
+    padding-top: 6rem;
+  }
+
+  &__logo {
+    font-size: 3.5rem;
+    letter-spacing: -0.019em;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__nav {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+    @media (min-width: 1024px) {
+      pointer-events: auto;
+    }
+    a {
+      opacity: 0;
+      color: $color-primary-dark;
+      font-size: 3rem;
+      transition: all 0.2s ease;
+      letter-spacing: 0.13em;
+      margin-left: 0;
+      display: inline-block;
+      text-decoration: none;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+    &.open {
+      background-color: $background-color-overlay;
+      opacity: 1;
+      z-index: 1;
+      pointer-events: auto;
+      a {
+        animation: fadeInRight 0.3s ease forwards;
+        margin-bottom: 2rem;
+        $elements: 10;
+        $count: 0.2;
+        @for $i from 0 to $elements {
+          &:nth-of-type(#{$i + 1}) {
+            animation-delay: 0.4s + $count * $i;
+          }
+        }
+      }
+    }
+    @media (min-width: 1024px) {
+      position: static;
+      display: block;
+      width: auto;
+      height: auto;
+      opacity: 1;
+      font-size: 1.2rem;
+
+      a {
+        opacity: 1;
+        color: #d9f0ff;
+        margin-bottom: 0;
+        font-size: 1.4rem;
+
+        &:not(:first-child) {
+          margin-left: 30px;
+        }
+      }
+    }
+  }
+
+  &__burger {
+    z-index: 9999;
+    cursor: pointer;
+    @media (min-width: 1024px) {
+      display: none;
+    }
+    .header__line {
+      position: relative;
+      background-color: $color-burger;
+      width: $width-burger-line;
+      height: $height-burger-line;
+      border-radius: $radius-burger-line;
+      transition: 240ms;
+      &:not(:last-child) {
+        margin-bottom: $margin-burger-line;
+      }
+      &:nth-child(2) {
+        transition: all 0.2s ease;
+      }
+    }
+    &.active {
+      .header__line {
+        background-color: $color-primary;
+        &:nth-child(1) {
+          transform: translateY($transform-y-burger-line) rotate(45deg);
+        }
+        &:nth-child(2) {
+          transform: translateY($transform-y-burger-line) rotate(45deg);
+          opacity: 0;
+        }
+        &:nth-child(3) {
+          transform: translateY(-$transform-y-burger-line) rotate(-45deg);
+        }
+      }
+    }
+  }
+}
+
+// .header {
+//   position: fixed;
+//   width: 100%;
+//   top: 0px;
+//   padding-top: 2rem;
+//   transition: all 0.5s ease-in-out;
+//   z-index: 10000;
+
+//   @media (min-width: 1024px) {
+//     padding-top: 6rem;
+//   }
+
+//   &--scroll {
+//     padding: 1rem 0;
+//     background-color: $color-black;
+//   }
+
+//   &__container {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//   }
+
+//   &__burger {
+//     z-index: 9999;
+//     cursor: pointer;
+//     @media (min-width: 1024px) {
+//       display: none;
+//     }
+//     .header__line {
+//       position: relative;
+//       background-color: $color-burger;
+//       width: $width-burger-line;
+//       height: $height-burger-line;
+//       border-radius: $radius-burger-line;
+//       transition: 240ms;
+//       &:not(:last-child) {
+//         margin-bottom: $margin-burger-line;
+//       }
+//       &:nth-child(2) {
+//         transition: all 0.2s ease;
+//       }
+//     }
+//     &.active {
+//       .header__line {
+//         background-color: $color-black;
+//         &:nth-child(1) {
+//           transform: translateY($transform-y-burger-line) rotate(45deg);
+//         }
+//         &:nth-child(2) {
+//           transform: translateY($transform-y-burger-line) rotate(45deg);
+//           opacity: 0;
+//         }
+//         &:nth-child(3) {
+//           transform: translateY(-$transform-y-burger-line) rotate(-45deg);
+//         }
+//       }
+//     }
+//   }
+
+//   a {
+//     display: inline-block;
+//     text-decoration: none;
+//     color: #d9f0ff;
+//     transition: all 0.2s ease;
+//   }
+
+//   &__logo {
+//     font-family: "Dancing Script";
+//     font-size: 2.8rem;
+//     margin-bottom: 0;
+
+//     @media (min-width: 1024px) {
+//     }
+//   }
+
+//   &__nav {
+//     position: absolute;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     flex-direction: column;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100vh;
+//     opacity: 0;
+//     transition: opacity 0.2s;
+//     a {
+//       opacity: 0;
+//       color: $color-black;
+//       font-size: 3rem;
+//       transition: all 0.2s ease;
+//       &:hover {
+//         color: $color-primary;
+//       }
+//     }
+//     &.open {
+//       background-color: $background-color-overlay;
+//       opacity: 1;
+//       z-index: 1;
+//       a {
+//         animation: fadeInRight 0.3s ease forwards;
+//         margin-bottom: 2rem;
+//         $elements: 10;
+//         $count: 0.2;
+//         @for $i from 0 to $elements {
+//           &:nth-of-type(#{$i + 1}) {
+//             animation-delay: 0.4s + $count * $i;
+//           }
+//         }
+//       }
+//     }
+//     @media (min-width: 1024px) {
+//       position: static;
+//       display: block;
+//       width: auto;
+//       height: auto;
+//       opacity: 1;
+//       font-size: 1.2rem;
+
+//       a {
+//         font-size: 1.2rem;
+//         letter-spacing: 0.2em;
+//         opacity: 1;
+//         color: #d9f0ff;
+//         margin-bottom: 0;
+
+//         &:not(:first-child) {
+//           margin-left: 30px;
+//         }
+
+//         &:hover {
+//           color: $color-primary-dark;
+//         }
+//       }
+//     }
+//   }
+// }
