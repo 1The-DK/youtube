@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "start": "parcel ./index.html",
+    "build": "parcel build ./index.html"
+  },
+  "dependencies": {
+    "parcel": "^2.7.0"
+  },
+  "devDependencies": {
+    "postcss": "^8.0.9",
+    "tailwindcss": "^3.1.8"
+  }
+}
