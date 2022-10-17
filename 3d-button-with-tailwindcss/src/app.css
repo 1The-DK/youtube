@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply text-black bg-grey text-base--mobile lg:text-base font-["Helvetica"];
+    }
+
+    h1,
+    h2,
+    h3 {
+        @apply font-bold leading-tight tracking-tight;
+    }
+
+    h1 {
+        @apply text-2.5xl md:text-4xl lg:text-5xl;
+    }
+
+    h2,
+    .h2 {
+        @apply text-xl md:text-3xl lg:text-4xl;
+    }
+
+    h3 {
+        @apply text-md md:text-base lg:text-3xl;
+    }
+
+    img {
+        @apply rounded-lg lg:rounded-2xl;
+    }
+}
+
+@layer components {
+    .btn {
+        @apply relative inline-block;
+
+        &__text {
+            @apply block text-center border border-black leading-none bg-white transition-all duration-200 ease-linear top-0 right-0 py-2 px-4 z-10 relative;
+        }
+
+        &::before {
+            @apply content-[''] block w-full h-full border border-black bg-blue absolute z-0 transition-all duration-200 ease-linear top-[6px] -right-[6px];
+        }
+
+        &:hover {
+            &::before {
+                @apply top-[4px] -right-[4px]
+            }
+
+            .btn__text {
+                @apply top-[2px] -right-[2px];
+            }
+        }
+
+        &:active {
+            &::before,
+            .btn__text {
+                @apply top-[3px] -right-[3px];
+            }
+        }
+    }
+}
