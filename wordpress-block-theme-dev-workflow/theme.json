@@ -1,0 +1,74 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 2,
+  "settings": {
+    "appearanceTools": false,
+    "color": {
+      "defaultPalette": false,
+      "custom": false,
+      "background": false,
+      "text": false,
+      "customDuotone": false,
+      "customGradient": false,
+      "defaultGradients": false,
+      "gradients": [],
+      "duotone": [],
+      "link": false,
+      "palette": [
+        {
+          "slug": "black",
+          "color": "#17252B",
+          "name": "Black"
+        },
+        {
+          "slug": "yellow",
+          "color": "#FFE600",
+          "name": "Yellow"
+        },
+        {
+          "slug": "white",
+          "color": "#FFFFFF",
+          "name": "White"
+        }
+      ]
+    },
+    "border": {
+      "color": false,
+      "radius": false,
+      "style": false,
+      "width": false
+    },
+    "spacing": {
+      "margin": false,
+      "padding": false,
+      "blockGap": null
+    },
+    "typography": {
+      "lineHeight": false,
+      "letterSpacing": false,
+      "customFontSize": false,
+      "fontWeight": false,
+      "fontStyle": false,
+      "textDecoration": false,
+      "textTransform": false,
+      "fontFamilies": [],
+      "dropCap": false,
+      "fontSizes": []
+    },
+    "blocks": {
+      "core/paragraph": {
+        "border": {},
+        "color": {},
+        "custom": {},
+        "layout": {},
+        "spacing": {},
+        "typography": {}
+      },
+      "core/button": {
+        "border": {
+          "radius": false
+        }
+      }
+    }
+  }
+}
